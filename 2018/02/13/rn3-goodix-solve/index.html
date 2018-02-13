@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>红米 Note 3 在 Lineage OS 上的简单指纹修复方法 | Robwolver | 萝卜圆里的一只狼。← 错别字吗？故意的~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3A8FB7">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="红米 Note 3 在 Lineage OS 上的简单指纹修复方法">
+<meta property="og:url" content="/2018/02/13/rn3-goodix-solve/index.html">
+<meta property="og:site_name" content="Robwolver">
+<meta property="og:description" content="注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-02-13T13:26:00.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="红米 Note 3 在 Lineage OS 上的简单指纹修复方法">
+<meta name="twitter:description" content="注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robwolver" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robwolver</h5>
+          <a href="mailto:Robwolver@QQ.com" title="Robwolver@QQ.com" class="mail">Robwolver@QQ.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/line"  >
+                <i class="icon icon-lg icon-none"></i>
+                分割线
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/u/6288911946" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">红米 Note 3 在 Lineage OS 上的简单指纹修复方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">红米 Note 3 在 Lineage OS 上的简单指纹修复方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-13T13:05:19.000Z" itemprop="datePublished" class="page-time">
+  2018-02-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/不是教程/">不是教程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提前准备"><span class="post-toc-number">1.</span> <span class="post-toc-text">提前准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一步：解压刷机包、将缺失的文件替换进去"><span class="post-toc-number">2.</span> <span class="post-toc-text">第一步：解压刷机包、将缺失的文件替换进去</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二步：解开-boot-img，得到-ramdisk-和-kernel"><span class="post-toc-number">3.</span> <span class="post-toc-text">第二步：解开 boot.img，得到 ramdisk 和 kernel</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三步：转换-file-contexts-bin"><span class="post-toc-number">4.</span> <span class="post-toc-text">第三步：转换 file_contexts.bin</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四步：补充-boot-img-中有关的缺失代码"><span class="post-toc-number">5.</span> <span class="post-toc-text">第四步：补充 boot.img 中有关的缺失代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五步：还原-file-contexts，重新打包-boot-img，打包刷机包"><span class="post-toc-number">6.</span> <span class="post-toc-text">第五步：还原 file_contexts，重新打包 boot.img，打包刷机包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新记录"><span class="post-toc-number">7.</span> <span class="post-toc-text">更新记录</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-rn3-goodix-solve"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">红米 Note 3 在 Lineage OS 上的简单指纹修复方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-13 21:05:19" datetime="2018-02-13T13:05:19.000Z"  itemprop="datePublished">2018-02-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/不是教程/">不是教程</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>注意，该篇文章完成日期在：2017-02-08 22:00:08。<br>现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)</p>
+</blockquote>
+<p>指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。<br><a id="more"></a><br>如果你是 FPC 用户，那你可以跳过这篇文章了（毕竟 FPC 指纹妥妥滴阔以用，这篇文章主要说的是 Goodix 指纹的修复方法）。<br>这里简单讲一下，红米 Note 3 有不同的批次，有不同的批次所以就有不同的元件。指纹主要分两家： FPC 与 Goodix。小米在 Gi(a)t(y)hub 里有关红米 Note 3 的内核（Android L）开源代码中，对于 Goodix 的描述并不详细，所以开发者们很难通过这种方法来生成指纹所需要的驱动和相关文件，于是指纹就炸了。在红米 Note 3 有了开发版的 Android 6.0 后，xda-developers 的大神们就开始着手修复 Android 6.0 以上的指纹问题，因为有了 Goodix 能用的 Android 6.0（其它厂商的手机系统里），所以指纹修复也变的极其简单：只需要补充 boot.img 和 System 有关 Goodix 的代码与文件即可。在这里我拿 nicknitewolf 的<a href="https://forum.xda-developers.com/showpost.php?p=70342606&amp;postcount=4546" target="_blank" rel="noopener">修复成果</a>来做一个重新实现，顺便说下步骤。<br><strong>请注意：<br>1.这篇文章是在 Linux 的环境下进行操作得出的，Windows 下有相应的替代方法<br>2.此方法仅针对 Lineage OS 进行说明，其它系统请自测<br>3.全部操作都在 /home 目录下完成</strong></p>
+<hr>
+<h2 id="提前准备"><a href="#提前准备" class="headerlink" title="提前准备"></a>提前准备</h2><ul>
+<li>Lineage OS 刷机包<br>下载地址：<a href="https://download.lineageos.org" target="_blank" rel="noopener">https://download.lineageos.org</a></li>
+<li>需要的 Goodix 文件<br>主要 Goodix 指纹的驱动、配置等<br>下载地址：<a href="http://ok0h0zfk0.bkt.clouddn.com/Goodix.zip" target="_blank" rel="noopener">点我</a></li>
+<li>boot.img<br>这玩意就不多说了吧，从你下载的 Lineage OS 刷机包里面提取就可以了</li>
+<li>mkbootimg<br>Linux 下解包 boot.img 的常用工具，这里我推荐 <a href="https://github.com/xiaolu" target="_blank" rel="noopener">xiaolu</a> 的解包工具（下载<a href="https://github.com/xiaolu/mkbootimg_tools" target="_blank" rel="noopener">点我</a>）</li>
+<li>file_contexts 与 file_contexts.bin 的相互转换工具<br>在 Android 7.x 中，解包 ramdisk 后的file_contexts.bin无法直接编辑，需要通过工具来进行转换，cofface 大神做了一个转换工具解决了这个问题<br>下载地址：<a href="http://blog.cofface.com/archives/2255.html" target="_blank" rel="noopener">http://blog.cofface.com/archives/2255.html</a></li>
+</ul>
+<blockquote>
+<p>请注意：</p>
+<ol>
+<li>下载 Lineage OS 的时候，请选择正确的机型 ( <code>Xiaomi</code> &gt; <code>kenzo</code> )！</li>
+<li><code>mkbootimg</code> 的使用方法在这里做省略，Github 中的 <code>readme.md</code> 下有详细介绍！</li>
+<li>转换工具必须要在 Linux 下进行操作！</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="第一步：解压刷机包、将缺失的文件替换进去"><a href="#第一步：解压刷机包、将缺失的文件替换进去" class="headerlink" title="第一步：解压刷机包、将缺失的文件替换进去"></a>第一步：解压刷机包、将缺失的文件替换进去</h2><ol>
+<li>输入命令<br><code>unzip 你下载的LineageOS刷机包.zip -d Lineage</code><br>你会发现 /home 中多了个 Lineage 文件夹，这就是解压的刷机包文件，boot.img 也在里面</li>
+<li>输入命令<br><code>unzip Goodix.zip -d Goodix</code><br>你又会发现 /home 中多了个 Goodix 文件夹，这就是需要补上去的指纹补丁</li>
+<li>在文件管理器中直接将 Goodix 文件夹中的文件复制到 <code>Lineage/system</code> 中<br>至此，补充完成</li>
+</ol>
+<hr>
+<h2 id="第二步：解开-boot-img，得到-ramdisk-和-kernel"><a href="#第二步：解开-boot-img，得到-ramdisk-和-kernel" class="headerlink" title="第二步：解开 boot.img，得到 ramdisk 和 kernel"></a>第二步：解开 boot.img，得到 <code>ramdisk</code> 和 <code>kernel</code></h2><ol>
+<li>将 boot.img 复制到 <code>/home</code>，同时将工具也扔在这里</li>
+<li>输入命令<br><code>sudo sh mkboot boot.img output</code><br>解开的 boot.img 将会在 <code>output</code> 文件夹中</li>
+</ol>
+<hr>
+<h2 id="第三步：转换-file-contexts-bin"><a href="#第三步：转换-file-contexts-bin" class="headerlink" title="第三步：转换 file_contexts.bin"></a>第三步：转换 file_contexts.bin</h2><p>输入命令<br><code>./sefcontext -o file_contexts file_contexts.bin</code><br>转换完成</p>
+<hr>
+<h2 id="第四步：补充-boot-img-中有关的缺失代码"><a href="#第四步：补充-boot-img-中有关的缺失代码" class="headerlink" title="第四步：补充 boot.img 中有关的缺失代码"></a>第四步：补充 boot.img 中有关的缺失代码</h2><ol>
+<li><p>打开 <code>file_contexts</code>，用搜索敲下 <code># Fingerprint</code><br>这里是有关指纹的代码地方，你会发现这里只有 <code>fpc1020</code> 的有关描述，并没有 Goodix 的，下面我们把它添加到其中<br>在下面直接添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/dev/gf66xx-spi     u:object_r:gx_fpd_device:s0</span><br><span class="line">/dev/ttyACM[0-9]*   u:object_r:gx_fpd_device:s0</span><br><span class="line">/dev/goodix_fp*     u:object_r:gx_fpd_device:s0</span><br><span class="line">/system/bin/gx_fpd       u:object_r:gx_fpd_exec:s0</span><br><span class="line">/data/system/fingerprint(/.*)?    u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/data/goodix/*			  u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/persist/data/gxfp(/.*)?	  u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/persist/data/gxfp		  u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/system/lib/libfpservice.so       u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib/libfpalgorithm.so     u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib/libfp_client.so       u:object_r:gx_fp_lib_file:s0</span><br><span class="line">/system/lib/libfphal.so           u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib/libfpnav.so           u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfpservice.so     u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfpalgorithm.so   u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfp_client.so     u:object_r:gx_fp_lib_file:s0</span><br><span class="line">/system/lib64/libfphal.so         u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfpnav.so         u:object_r:gx_fpd_lib_file:s0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开 <code>init.qcom.rc</code>，用搜索敲下 <code>on fs</code><br>在后面直接添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown system system  /dev/goodix_fp</span><br><span class="line">chmod 0644 /dev/goodix_fp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继续，再在最后一行敲下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">service gx_fpd /system/bin/gx_fpd</span><br><span class="line">    class late_start</span><br><span class="line">    user system</span><br><span class="line">    group system</span><br><span class="line">    disabled</span><br><span class="line"></span><br><span class="line">on property:persist.sys.fp.sensor=goodix</span><br><span class="line">    start gx_fpd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开 <code>init.qcom.sh</code> ，在最后一行开始敲下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [ -d /sys/class/goodix_fp ]; then</span><br><span class="line">    setprop persist.sys.fp.sensor goodix</span><br><span class="line">else</span><br><span class="line">    setprop persist.sys.fp.sensor fpc</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>全部完成，保存退出</p>
+<hr>
+<h2 id="第五步：还原-file-contexts，重新打包-boot-img，打包刷机包"><a href="#第五步：还原-file-contexts，重新打包-boot-img，打包刷机包" class="headerlink" title="第五步：还原 file_contexts，重新打包 boot.img，打包刷机包"></a>第五步：还原 <code>file_contexts</code>，重新打包 boot.img，打包刷机包</h2><ol>
+<li>输入命令<br><code>./sefcontext_compile -o file_contexts.bin file_contexts</code><br>转换完成</li>
+<li>输入命令<br><code>sudo sh mkboot output boot1.img</code><br>boot.img 打包完成，名称为 boot1.img</li>
+<li>将 boot1.img 重命名为 boot.img，并复制到解压的刷机包文件，替换掉原来的</li>
+<li>输入命令<br><code>zip -r lineage.zip Lineage</code><br>打包完成</li>
+</ol>
+<hr>
+<p>全部完成，刷进去试试看吧！<br>感谢你看完这篇文章，如果有更多问题可以在评论区提出，同时也欢迎关注我的微博~</p>
+<hr>
+<h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><p>2017/02/09 00:04 创建文章<br>2017/02/09 05:26 小修改</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-02-13T13:26:00.629Z" itemprop="dateUpdated">2018-02-13 21:26:00</time>
+</span><br>
+
+
+        
+        如果您有疑问或者建议，欢迎联系我，联系方式在 <a href="/about">关于</a> 内。
+        
+    </div>
+    
+    <footer>
+        <a href="">
+            <img src="/img/avatar.jpg" alt="Robwolver">
+            Robwolver
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=/2018/02/13/rn3-goodix-solve/&title=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&pic=/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=/2018/02/13/rn3-goodix-solve/&title=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&source=
+注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=/2018/02/13/rn3-goodix-solve/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&url=/2018/02/13/rn3-goodix-solve/&via=" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=/2018/02/13/rn3-goodix-solve/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/02/13/lineageos-on-rn3/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Lineage OS 刷机过程和简评（红米 Note3）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robwolver &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=/2018/02/13/rn3-goodix-solve/&title=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&pic=/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=/2018/02/13/rn3-goodix-solve/&title=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&source=
+注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=/2018/02/13/rn3-goodix-solve/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&url=/2018/02/13/rn3-goodix-solve/&via=" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=/2018/02/13/rn3-goodix-solve/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzklEQVR42u3aQY4CMQwFUe5/6Z4DoIT6dmLQqLJCDYQXFpYd+/XC63lbq3dXT1Z7vm4suXLltrnPdr1vzekr0P54H3aQK1fuIHcfaPYHSBGr/VGwkytX7k9ySeJCWHLlyv0fXP4tEgTlypX7+1ySjvD0ZX8AEigP1Gpy5cptcPkt5b3XV+535cqVW+I+pUV24GlQ8Lty5cod4aZBhzdXSLGUplNy5cqd4aaBJr0eJaxggEOuXLmD3LOBrNZiQU/kypX7JW4agNJGC7l2Wf5xcuXKHeF2WGnBU0uVUOdHrly5R7mn2qu87CFpEEpx5MqVe5nbH7figxS1yxG5cuXOc9PEpTaImQayD7mYXLlyL3M7gxSkiEovU4LBC7ly5Y5zSdLDn5NQFc+JyJUr9wL37DUHb7LWmrJy5cqd4abt1U6TtdOqkStX7iS3dmGRpiz9gYxgPEuuXLlt7hMuHqTSUgc1deTKlTvCTcMKD2e1sa1++JMrV+4pbjqe1R/V4oFsWbHJlSt3hMsLm/gHSolLME0mV67cr3LJAWpFzpVAJleu3BEup5MQliZMcuXKnefy8iZOSkqfR50fuXLlXuOmpcg+nHWaInxsS65cude4f6aqJQs2KYfjAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
