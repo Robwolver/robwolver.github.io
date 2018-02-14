@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2018-02-14T10:12:47.878Z</updated>
+  <updated>2018-02-14T17:46:47.251Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新年快乐~</title>
+    <link href="/2018/02/15/happy-new-year/"/>
+    <id>/2018/02/15/happy-new-year/</id>
+    <published>2018-02-14T17:37:13.000Z</published>
+    <updated>2018-02-14T17:46:47.251Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天才算把博客搭完吧…其实去年试过一些博客平台，例如 Wordpress、typecho，都挺不错可是没钱啊 QAQ。只能用免费的 hexo。不管怎么样，好好用下去，记录自己的生活。<br>刚好赶上新年诶，祝大家新年快乐~<br>（不要点汉堡菜单里的东西，都不好看）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天才算把博客搭完吧…其实去年试过一些博客平台，例如 Wordpress、typecho，都挺不错可是没钱啊 QAQ。只能用免费的 hexo。不管怎么样，好好用下去，记录自己的生活。&lt;br&gt;刚好赶上新年诶，祝大家新年快乐~&lt;br&gt;（不要点汉堡菜单里的东西，都不好看）&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="生活随想" scheme="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="杂文" scheme="/tags/%E6%9D%82%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>红米 Note 3 在 Lineage OS 上的简单指纹修复方法</title>
