@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
+    <meta name="description" content="该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，对现在来说是用户的刚需。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="红米 Note 3 在 Lineage OS 上的简单指纹修复方法">
 <meta property="og:url" content="/2018/02/13/rn3-goodix-solve/index.html">
 <meta property="og:site_name" content="Robwolver">
-<meta property="og:description" content="注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
+<meta property="og:description" content="该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，对现在来说是用户的刚需。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-13T13:26:00.629Z">
+<meta property="og:updated_time" content="2018-02-14T10:12:47.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="红米 Note 3 在 Lineage OS 上的简单指纹修复方法">
-<meta name="twitter:description" content="注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
+<meta name="twitter:description" content="该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)  指纹这玩意，对现在来说是用户的刚需。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。">
     
         <link rel="alternate" type="application/atom+xml" title="Robwolver" href="/atom.xml">
     
@@ -196,23 +196,23 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>注意，该篇文章完成日期在：2017-02-08 22:00:08。<br>现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)</p>
+<p>该篇文章完成日期在：2017-02-08 22:00:08。<br>现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)</p>
 </blockquote>
-<p>指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。<br><a id="more"></a><br>如果你是 FPC 用户，那你可以跳过这篇文章了（毕竟 FPC 指纹妥妥滴阔以用，这篇文章主要说的是 Goodix 指纹的修复方法）。<br>这里简单讲一下，红米 Note 3 有不同的批次，有不同的批次所以就有不同的元件。指纹主要分两家： FPC 与 Goodix。小米在 Gi(a)t(y)hub 里有关红米 Note 3 的内核（Android L）开源代码中，对于 Goodix 的描述并不详细，所以开发者们很难通过这种方法来生成指纹所需要的驱动和相关文件，于是指纹就炸了。在红米 Note 3 有了开发版的 Android 6.0 后，xda-developers 的大神们就开始着手修复 Android 6.0 以上的指纹问题，因为有了 Goodix 能用的 Android 6.0（其它厂商的手机系统里），所以指纹修复也变的极其简单：只需要补充 boot.img 和 System 有关 Goodix 的代码与文件即可。在这里我拿 nicknitewolf 的<a href="https://forum.xda-developers.com/showpost.php?p=70342606&amp;postcount=4546" target="_blank" rel="noopener">修复成果</a>来做一个重新实现，顺便说下步骤。<br><strong>请注意：<br>1.这篇文章是在 Linux 的环境下进行操作得出的，Windows 下有相应的替代方法<br>2.此方法仅针对 Lineage OS 进行说明，其它系统请自测<br>3.全部操作都在 /home 目录下完成</strong></p>
+<p>指纹这玩意，对现在来说是用户的刚需。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。<br><a id="more"></a><br>如果你是 FPC 用户，那你可以跳过这篇文章了（FPC 指纹妥妥滴用，这篇文章主要说的是 Goodix 指纹的修复方法）。<br>这里简单讲一下，红米 Note 3 有不同的批次，有不同的批次就有不同厂商的元件。指纹主要分两家： FPC 与 Goodix。小米在 Gi(a)t(y)hub 里有关红米 Note 3 的内核（Android L）代码中，对于 Goodix 的描述并不详细，所以开发者们很难通过这种方法来生成指纹所需要的驱动和相关文件。红米 Note 3 有了开发版的 Android 6.0 后，xda-developers 的大神们就开始着手修复 Android 6.0 以上的指纹问题。有一个临时解决方法，只需要补充 boot.img 和 System 有关 Goodix 的代码与文件即可。<br><strong>请注意：<br>1.这篇文章是在 Linux 的环境下进行操作得出的，Windows 下有相应的替代方法<br>2.此方法仅针对 Lineage OS，其它第三方系统请自测<br>3.所有操作都在 /home 目录下完成<br>4.该方法不稳定，会有指纹短暂性失效的 bug</strong></p>
 <hr>
 <h2 id="提前准备"><a href="#提前准备" class="headerlink" title="提前准备"></a>提前准备</h2><ul>
 <li>Lineage OS 刷机包<br>下载地址：<a href="https://download.lineageos.org" target="_blank" rel="noopener">https://download.lineageos.org</a></li>
-<li>需要的 Goodix 文件<br>主要 Goodix 指纹的驱动、配置等<br>下载地址：<a href="http://ok0h0zfk0.bkt.clouddn.com/Goodix.zip" target="_blank" rel="noopener">点我</a></li>
+<li>需要的 Goodix 文件<br>Goodix 指纹的驱动、配置等<br>下载地址：<a href="http://ok0h0zfk0.bkt.clouddn.com/Goodix.zip" target="_blank" rel="noopener">点我</a></li>
 <li>boot.img<br>这玩意就不多说了吧，从你下载的 Lineage OS 刷机包里面提取就可以了</li>
 <li>mkbootimg<br>Linux 下解包 boot.img 的常用工具，这里我推荐 <a href="https://github.com/xiaolu" target="_blank" rel="noopener">xiaolu</a> 的解包工具（下载<a href="https://github.com/xiaolu/mkbootimg_tools" target="_blank" rel="noopener">点我</a>）</li>
 <li>file_contexts 与 file_contexts.bin 的相互转换工具<br>在 Android 7.x 中，解包 ramdisk 后的file_contexts.bin无法直接编辑，需要通过工具来进行转换，cofface 大神做了一个转换工具解决了这个问题<br>下载地址：<a href="http://blog.cofface.com/archives/2255.html" target="_blank" rel="noopener">http://blog.cofface.com/archives/2255.html</a></li>
 </ul>
 <blockquote>
-<p>请注意：</p>
+<p>注意：</p>
 <ol>
-<li>下载 Lineage OS 的时候，请选择正确的机型 ( <code>Xiaomi</code> &gt; <code>kenzo</code> )！</li>
-<li><code>mkbootimg</code> 的使用方法在这里做省略，Github 中的 <code>readme.md</code> 下有详细介绍！</li>
-<li>转换工具必须要在 Linux 下进行操作！</li>
+<li>下载 Lineage OS 的时候，请选择正确的机型 ( <code>Xiaomi</code> &gt; <code>kenzo</code> )</li>
+<li><code>mkbootimg</code> 的使用方法在这里做省略，Github 中的 <code>readme.md</code> 下有详细介绍。</li>
+<li>转换工具必须要在 Linux 下进行操作。</li>
 </ol>
 </blockquote>
 <hr>
@@ -236,10 +236,10 @@
 <li><p>打开 <code>init.qcom.rc</code>，用搜索敲下 <code>on fs</code><br>在后面直接添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown system system  /dev/goodix_fp</span><br><span class="line">chmod 0644 /dev/goodix_fp</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>继续，再在最后一行敲下</p>
+<li><p>在最后一行敲下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">service gx_fpd /system/bin/gx_fpd</span><br><span class="line">    class late_start</span><br><span class="line">    user system</span><br><span class="line">    group system</span><br><span class="line">    disabled</span><br><span class="line"></span><br><span class="line">on property:persist.sys.fp.sensor=goodix</span><br><span class="line">    start gx_fpd</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>打开 <code>init.qcom.sh</code> ，在最后一行开始敲下</p>
+<li><p>打开 <code>init.qcom.sh</code>，在最后一行敲下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [ -d /sys/class/goodix_fp ]; then</span><br><span class="line">    setprop persist.sys.fp.sensor goodix</span><br><span class="line">else</span><br><span class="line">    setprop persist.sys.fp.sensor fpc</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -252,9 +252,9 @@
 <li>输入命令<br><code>zip -r lineage.zip Lineage</code><br>打包完成</li>
 </ol>
 <hr>
-<p>全部完成，刷进去试试看吧！<br>感谢你看完这篇文章，如果有更多问题可以在评论区提出，同时也欢迎关注我的微博~</p>
+<p>全部完成，刷进去试试看吧！</p>
 <hr>
-<h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><p>2017/02/09 00:04 创建文章<br>2017/02/09 05:26 小修改</p>
+<h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><p>2017/02/09 00:04 创建文章<br>2017/02/09 05:26 修改1<br>2018/02/13 16:28 修改2</p>
 
         </div>
 
@@ -263,7 +263,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-02-13T13:26:00.629Z" itemprop="dateUpdated">2018-02-13 21:26:00</time>
+    最后更新时间：<time datetime="2018-02-14T10:12:47.878Z" itemprop="dateUpdated">2018-02-14 18:12:47</time>
 </span><br>
 
 
@@ -310,7 +310,7 @@
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=/2018/02/13/rn3-goodix-solve/&title=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&source=
-注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (..." data-title=" QQ">
+该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Mar..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -448,7 +448,7 @@
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=/2018/02/13/rn3-goodix-solve/&title=《红米 Note 3 在 Lineage OS 上的简单指纹修复方法》 — Robwolver&source=
-注意，该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (..." data-title=" QQ">
+该篇文章完成日期在：2017-02-08 22:00:08。现在已经不需要修复了，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Mar..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
