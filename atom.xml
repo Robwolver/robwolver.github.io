@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Robwolver</title>
   
-  <subtitle>萝卜圆里的一只狼。← 错别字吗？故意的~</subtitle>
+  <subtitle>萝卜圆里的一只狼</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2018-06-07T14:08:29.985Z</updated>
+  <updated>2018-03-03T19:21:18.665Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World!</title>
+    <link href="/2019/08/20/hello-world/"/>
+    <id>/2019/08/20/hello-world/</id>
+    <published>2019-08-19T21:09:06.005Z</published>
+    <updated>2018-03-03T19:21:18.665Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>又来说点什么</title>
@@ -68,7 +89,7 @@
     <link href="/2018/02/13/rn3-goodix-solve/"/>
     <id>/2018/02/13/rn3-goodix-solve/</id>
     <published>2018-02-13T13:05:19.000Z</published>
-    <updated>2018-06-07T08:43:46.412Z</updated>
+    <updated>2018-06-07T08:43:46.413Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>这篇文章完成日期在：2017-02-08 22:00:08。<br>现在无需修复，包括 8.x (Oreo)、7.x (Nougat)、6.0 (Marshmallow、17 年 6 月后的版本)</p></blockquote><p>指纹这玩意，其实我不怎么玩来着（甚至锁屏都没密码 2333）。在酷安发某文章的时候有个酷友提到了关于指纹的问题，再加上白天的时候台式机给客人在玩，只能拿笔电玩玩，于是就捣鼓了下指纹。<br><a id="more"></a><br>如果你是 FPC 用户，那你可以跳过这篇文章了（FPC 指纹妥妥滴用，这篇文章主要说的是 Goodix 指纹的修复方法）。<br>这里简单讲一下，红米 Note 3 有不同的批次，有不同的批次就有不同厂商的元件。指纹主要分两家： FPC 与 Goodix。小米在 Gi(a)t(y)hub 里有关红米 Note 3 的内核（Android L）代码中，对于 Goodix 的描述并不详细，所以开发者们很难通过这种方法来生成指纹所需要的驱动和相关文件。红米 Note 3 有了开发版的 Android 6.0 后，xda-developers 的大神们就开始着手修复 Android 6.0 以上的指纹问题。有一个临时解决方法，只需要补充 boot.img 和 System 有关 Goodix 的代码与文件即可。<br><strong>请注意：<br>1.这篇文章是在 Linux 的环境下进行操作得出的，Windows 下有相应的替代方法<br>2.此方法仅针对 Lineage OS，其它第三方系统请自测<br>3.所有操作都在 /home 目录下完成<br>4.该方法不稳定，会有指纹短暂性失效的 bug</strong></p><hr><h2 id="提前准备"><a href="#提前准备" class="headerlink" title="提前准备"></a>提前准备</h2><ul><li>Lineage OS 刷机包<br>下载地址：<a href="https://download.lineageos.org" target="_blank" rel="noopener">https://download.lineageos.org</a></li><li>需要的 Goodix 文件<br>Goodix 指纹的驱动、配置等<br>下载地址：<a href="http://ok0h0zfk0.bkt.clouddn.com/Goodix.zip" target="_blank" rel="noopener">点我</a></li><li>boot.img<br>这玩意就不多说了吧，从你下载的 Lineage OS 刷机包里面提取就可以了</li><li>mkbootimg<br>Linux 下解包 boot.img 的常用工具，这里我推荐 <a href="https://github.com/xiaolu" target="_blank" rel="noopener">xiaolu</a> 的解包工具（下载<a href="https://github.com/xiaolu/mkbootimg_tools" target="_blank" rel="noopener">点我</a>）</li><li>file_contexts 与 file_contexts.bin 的相互转换工具<br>在 Android 7.x 中，解包 ramdisk 后的file_contexts.bin无法直接编辑，需要通过工具来进行转换，cofface 大神做了一个转换工具解决了这个问题<br>下载地址：<a href="http://blog.cofface.com/archives/2255.html" target="_blank" rel="noopener">http://blog.cofface.com/archives/2255.html</a></li></ul><blockquote><p>注意：</p><ol><li>下载 Lineage OS 的时候，请选择正确的机型 ( <code>Xiaomi</code> &gt; <code>kenzo</code> )</li><li><code>mkbootimg</code> 的使用方法在这里做省略，Github 中的 <code>readme.md</code> 下有详细介绍。</li><li>转换工具必须要在 Linux 下进行操作。</li></ol></blockquote><hr><h2 id="第一步：解压刷机包、将缺失的文件替换进去"><a href="#第一步：解压刷机包、将缺失的文件替换进去" class="headerlink" title="第一步：解压刷机包、将缺失的文件替换进去"></a>第一步：解压刷机包、将缺失的文件替换进去</h2><ol><li>输入命令<br><code>unzip 你下载的LineageOS刷机包.zip -d Lineage</code><br>你会发现 /home 中多了个 Lineage 文件夹，这就是解压的刷机包文件，boot.img 也在里面</li><li>输入命令<br><code>unzip Goodix.zip -d Goodix</code><br>你又会发现 /home 中多了个 Goodix 文件夹，这就是需要补上去的指纹补丁</li><li>在文件管理器中直接将 Goodix 文件夹中的文件复制到 <code>Lineage/system</code> 中<br>至此，补充完成</li></ol><hr><h2 id="第二步：解开-boot-img，得到-ramdisk-和-kernel"><a href="#第二步：解开-boot-img，得到-ramdisk-和-kernel" class="headerlink" title="第二步：解开 boot.img，得到 ramdisk 和 kernel"></a>第二步：解开 boot.img，得到 <code>ramdisk</code> 和 <code>kernel</code></h2><ol><li>将 boot.img 复制到 <code>/home</code>，同时将工具也扔在这里</li><li>输入命令<br><code>sudo sh mkboot boot.img output</code><br>解开的 boot.img 将会在 <code>output</code> 文件夹中</li></ol><hr><h2 id="第三步：转换-file-contexts-bin"><a href="#第三步：转换-file-contexts-bin" class="headerlink" title="第三步：转换 file_contexts.bin"></a>第三步：转换 file_contexts.bin</h2><p>输入命令<br><code>./sefcontext -o file_contexts file_contexts.bin</code><br>转换完成</p><hr><h2 id="第四步：补充-boot-img-中有关的缺失代码"><a href="#第四步：补充-boot-img-中有关的缺失代码" class="headerlink" title="第四步：补充 boot.img 中有关的缺失代码"></a>第四步：补充 boot.img 中有关的缺失代码</h2><ol><li><p>打开 <code>file_contexts</code>，用搜索敲下 <code># Fingerprint</code><br>这里是有关指纹的代码地方，你会发现这里只有 <code>fpc1020</code> 的有关描述，并没有 Goodix 的，下面我们把它添加到其中<br>在下面直接添加</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/dev/gf66xx-spi     u:object_r:gx_fpd_device:s0</span><br><span class="line">/dev/ttyACM[0-9]*   u:object_r:gx_fpd_device:s0</span><br><span class="line">/dev/goodix_fp*     u:object_r:gx_fpd_device:s0</span><br><span class="line">/system/bin/gx_fpd       u:object_r:gx_fpd_exec:s0</span><br><span class="line">/data/system/fingerprint(/.*)?    u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/data/goodix/*  u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/persist/data/gxfp(/.*)?  u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/persist/data/gxfp  u:object_r:gx_fpd_data_file:s0</span><br><span class="line">/system/lib/libfpservice.so       u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib/libfpalgorithm.so     u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib/libfp_client.so       u:object_r:gx_fp_lib_file:s0</span><br><span class="line">/system/lib/libfphal.so           u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib/libfpnav.so           u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfpservice.so     u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfpalgorithm.so   u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfp_client.so     u:object_r:gx_fp_lib_file:s0</span><br><span class="line">/system/lib64/libfphal.so         u:object_r:gx_fpd_lib_file:s0</span><br><span class="line">/system/lib64/libfpnav.so         u:object_r:gx_fpd_lib_file:s0</span><br></pre></td></tr></table></figure></li><li><p>打开 <code>init.qcom.rc</code>，用搜索敲下 <code>on fs</code><br>在后面直接添加</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown system system  /dev/goodix_fp</span><br><span class="line">chmod 0644 /dev/goodix_fp</span><br></pre></td></tr></table></figure></li><li><p>在最后一行敲下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">service gx_fpd /system/bin/gx_fpd</span><br><span class="line">    class late_start</span><br><span class="line">    user system</span><br><span class="line">    group system</span><br><span class="line">    disabled</span><br><span class="line"></span><br><span class="line">on property:persist.sys.fp.sensor=goodix</span><br><span class="line">    start gx_fpd</span><br></pre></td></tr></table></figure></li><li><p>打开 <code>init.qcom.sh</code>，在最后一行敲下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [ -d /sys/class/goodix_fp ]; then</span><br><span class="line">    setprop persist.sys.fp.sensor goodix</span><br><span class="line">else</span><br><span class="line">    setprop persist.sys.fp.sensor fpc</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li></ol><p>全部完成，保存退出</p><hr><h2 id="第五步：还原-file-contexts，重新打包-boot-img，打包刷机包"><a href="#第五步：还原-file-contexts，重新打包-boot-img，打包刷机包" class="headerlink" title="第五步：还原 file_contexts，重新打包 boot.img，打包刷机包"></a>第五步：还原 <code>file_contexts</code>，重新打包 boot.img，打包刷机包</h2><ol><li>输入命令<br><code>./sefcontext_compile -o file_contexts.bin file_contexts</code><br>转换完成</li><li>输入命令<br><code>sudo sh mkboot output boot1.img</code><br>boot.img 打包完成，名称为 boot1.img</li><li>将 boot1.img 重命名为 boot.img，并复制到解压的刷机包文件，替换掉原来的</li><li>输入命令<br><code>zip -r lineage.zip Lineage</code><br>打包完成</li></ol><hr><p>全部完成，刷进去试试看吧！</p><hr><h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><p>2017/02/09 00:04 创建文章<br>2017/02/09 05:26 修改1<br>2018/02/13 16:28 修改2</p>]]></content>
     
@@ -110,27 +131,6 @@
     
     
       <category term="Android" scheme="/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World!</title>
-    <link href="/2018/02/12/hello-world/"/>
-    <id>/2018/02/12/hello-world/</id>
-    <published>2018-02-12T07:50:03.583Z</published>
-    <updated>2018-03-03T19:21:18.665Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
